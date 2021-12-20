@@ -1,1 +1,20 @@
 12/17/21 - Created laravel 8 project.
+
+12/18/21 - Started setting up authentication. Did not want to use Laravel 8 way of
+auth scaffolding because it uses Tailwind CSS. Previous version of Laravel used
+Laravel UI, but that is or will be deprecated.
+Installed Fortify to do backend authentication. Ran database migrations to create authentication
+tables. Copied view for registration from Laravel UI.
+
+Using steps for Fortify for backend authentication and copying views from Laravel UI from
+these youtube videos:
+https://www.youtube.com/watch?v=CLsyHP7x0N0
+https://www.youtube.com/watch?v=NuGBzmHlINQ
+
+Currently register is working.
+
+
+12/20/21 - Setup login with Fortify. Copied view from Laravel UI for login page.
+Created basic home URI that requires being logged into to access.
+
+Need to fix CSS not working for register and login pages.
