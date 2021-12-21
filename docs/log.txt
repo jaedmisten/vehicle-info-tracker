@@ -18,3 +18,7 @@ Currently register is working.
 Created basic home URI that requires being logged into to access.
 
 Need to fix CSS not working for register and login pages.
+
+
+12/21/21 - Created database migrations, models, and controllers for vehicles, notes, and engines.
+Vehicles has foreign key to users table. Notes and engines tables have foreign keys to users table.
