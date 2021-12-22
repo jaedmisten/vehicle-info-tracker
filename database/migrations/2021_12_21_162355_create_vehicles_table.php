@@ -17,12 +17,15 @@ class CreateVehiclesTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->string('vin', 17)->nullable();
+            $table->string('license_plate_num', 7)->nullable();
             $table->string('make');
             $table->string('model');
-            $table->tinyInteger('year')->unsigned();
+            $table->year('year');
             $table->string('type');
             $table->tinyInteger('num_doors')->unsigned();
-            $table->dateTime('purchase_date');
+            $table->string('color');
+            $table->tinyInteger('currently_own');
+            $table->date('purchase_date');
             $table->mediumInteger('purchase_mileage')->unsigned();
             $table->mediumText('notes')->nullable();
             $table->timestamps();

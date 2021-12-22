@@ -17,8 +17,11 @@ Currently register is working.
 12/20/21 - Setup login with Fortify. Copied view from Laravel UI for login page.
 Created basic home URI that requires being logged into to access.
 
-Need to fix CSS not working for register and login pages.
-
 
 12/21/21 - Created database migrations, models, and controllers for vehicles, notes, and engines.
 Vehicles has foreign key to users table. Notes and engines tables have foreign keys to users table.
+
+
+12/22/21 - Updated migration for vehicles table to have columns for license plate number, color,
+currently own (bool), and purchase date. Also, changed year column to use year data type instead
+of tinyint.
