@@ -25,3 +25,7 @@ Vehicles has foreign key to users table. Notes and engines tables have foreign k
 12/22/21 - Updated migration for vehicles table to have columns for license plate number, color,
 currently own (bool), and purchase date. Also, changed year column to use year data type instead
 of tinyint.
+
+
+12/23/21 - Added basic pages to display all vehicles ('/vehicle') for a user and details for 
+a specific vehicle ('/vehicles/{id}'); 

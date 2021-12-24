@@ -17,4 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::view('/home', 'home')->middleware('auth');
+Route::middleware(['auth'])->group(function() {
+    Route::view('/home', 'home')->middleware('auth');
+    Route::get('/vehicles', 'App\Http\Controllers\VehicleController@index');
+    Route::get('/vehicles/{id}', 'App\Http\Controllers\VehicleController@show');
+});
+
+
