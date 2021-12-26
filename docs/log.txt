@@ -29,3 +29,7 @@ of tinyint.
 
 12/23/21 - Added basic pages to display all vehicles ('/vehicle') for a user and details for 
 a specific vehicle ('/vehicles/{id}'); 
+
+
+12/25/21 - Changed app to Vehicle Information Tracker because it will be tracking any info about 
+vehicles, not just maintenance.
