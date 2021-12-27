@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Vehicle;
+use App\Models\Event;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -18,7 +19,6 @@ class VehicleController extends Controller
     {
         $userId = Auth::user()->id;
         $vehicles = Vehicle::where('user_id', '=', $userId)->get();
-        //dd($vehicles);
         return view('vehicles', ['vehicles' => $vehicles]);
     }
     
@@ -30,7 +30,7 @@ class VehicleController extends Controller
      */
     public function show($id)
     {
-        $vehicle = Vehicle::where('id', '=', $id)->first();
-        return view('vehicle', ['vehicle' => $vehicle]);
+        $vehicle = Vehicle::find($id);
+        return view('vehicle', ['vehicle' => $vehicle]);        
     }
 }

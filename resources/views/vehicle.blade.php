@@ -3,16 +3,19 @@
 @section('content')
 <h1>Vehicle</h1>
 
-
-{{$vehicle}}
-
 <strong>{{$vehicle->year}} {{$vehicle->make}} {{$vehicle->model}}</strong>
 <hr>
-Events:<br>
-<?php
-foreach($vehicle['events'] as $event) {
-  echo "$event->date: $event->title<br>";
-  echo $event->summary . "<hr>";
-}
-?>
+<p>
+    <strong>Engine</strong>:<br>
+    Type: {{$vehicle->engine->type}}<br>
+    Number of cylinders: {{$vehicle->engine->num_cylinders}}
+</p>
+<hr>
+<strong>Events</strong>:<br>
+@foreach($vehicle->event as $event)
+{{$event->date}}: <u>{{$event->title}}</u>
+<br>{{$event->summary}}
+<hr>
+@endforeach
+
 @endsection

@@ -21,6 +21,6 @@ class Vehicle extends Model
     
     public function engine()
     {
-        return $this->hasMany(Engine::class);
+        return $this->hasOne(Engine::class);
     }
 }
