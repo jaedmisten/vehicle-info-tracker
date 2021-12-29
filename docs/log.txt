@@ -33,3 +33,12 @@ a specific vehicle ('/vehicles/{id}');
 
 12/25/21 - Changed app to Vehicle Information Tracker because it will be tracking any info about 
 vehicles, not just maintenance.
+
+
+12/27/21 - Added eloquent relationships to all models. Updated view for specific vehicle to use
+the eloquent relationship when getting engine details and when looping through a vehicles events
+by using @foreach($vehicle->event as $event). 
+
+
+12/29/21 - Fixed favicon not working when going to specific vehicle url like http://127.0.0.1:8001/vehicles/1.
+Needed to use asset() helper to always point to correct absolute url.

@@ -24,7 +24,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/jpg" href="favicons/icons8-car-48.png" />
+    <link rel="shortcut icon" type="image/jpg" href="{{ asset('favicons/icons8-car-48.png') }}" />
 </head>
 <body>
     <div id="app">
