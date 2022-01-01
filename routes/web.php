@@ -21,6 +21,8 @@ Route::middleware(['auth'])->group(function() {
     Route::view('/home', 'home')->middleware('auth');
     Route::get('/vehicles', 'App\Http\Controllers\VehicleController@index');
     Route::get('/vehicles/{id}', 'App\Http\Controllers\VehicleController@show');
+    Route::get('/vehicle/create', 'App\Http\Controllers\VehicleController@create');
+    Route::post('/vehicle', 'App\Http\Controllers\VehicleController@store');
 });
 
 
