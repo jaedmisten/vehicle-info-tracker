@@ -22,11 +22,11 @@ class CreateVehiclesTable extends Migration
             $table->string('model');
             $table->year('year');
             $table->string('type');
-            $table->tinyInteger('num_doors')->unsigned();
-            $table->string('color');
+            $table->tinyInteger('num_doors')->unsigned()->nullable();
+            $table->string('color')->nullable();
             $table->tinyInteger('currently_own');
-            $table->date('purchase_date');
-            $table->mediumInteger('purchase_mileage')->unsigned();
+            $table->date('purchase_date')->nullable();
+            $table->mediumInteger('purchase_mileage')->unsigned()->nullable();
             $table->mediumText('notes')->nullable();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');

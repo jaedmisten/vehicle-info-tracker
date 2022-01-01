@@ -17,7 +17,7 @@ class CreateEnginesTable extends Migration
             $table->id();
             $table->bigInteger('vehicle_id')->unsigned();
             $table->string('type');
-            $table->tinyInteger('num_cylinders');
+            $table->tinyInteger('num_cylinders')->nullable();
             $table->mediumText('notes')->nullable();
             $table->timestamps();
             $table->foreign('vehicle_id')->references('id')->on('vehicles');

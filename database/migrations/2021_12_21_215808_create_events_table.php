@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->mediumInteger('mileage')->unsigned()->nullable();
             $table->string('title');
             $table->string('mechanic')->nullable();
-            $table->mediumText('summary');
+            $table->mediumText('summary')->nullable();
             $table->timestamps();
             $table->foreign('vehicle_id')->references('id')->on('vehicles');
         });
