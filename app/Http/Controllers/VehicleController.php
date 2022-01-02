@@ -40,7 +40,8 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
-        dd('store called');
+        $userId = Auth::user()->id;
+        Vehicle::store($userId, $request);
     }
     
     /**

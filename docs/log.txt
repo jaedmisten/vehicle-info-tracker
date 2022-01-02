@@ -42,3 +42,15 @@ by using @foreach($vehicle->event as $event).
 
 12/29/21 - Fixed favicon not working when going to specific vehicle url like http://127.0.0.1:8001/vehicles/1.
 Needed to use asset() helper to always point to correct absolute url.
+
+
+12/31/21 - Started process for saving a vehicle for a user profile. Created view blade with very
+simple form for now. Created route to post the form to VehicleController@store().
+Needed to @csrf to form to post without getting 419 page expired error. The @csrf adds hidden
+input take with user session id to prevent CSRF attack.
+
+
+1/1/22 - Updated migrations to make more columns nullable if vehicle needs to be added and info
+can be updated later.
+
+Made updates to post vehicle data and save to vehicles table.
