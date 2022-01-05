@@ -25,9 +25,9 @@ Notes: {{$vehicle->notes}}<br>
 <hr>
 <?php endif; ?>
 
-<?php if (isset($vehicle->event)): ?>
+<?php if ($vehicle->events->isNotEmpty()): ?>
 <strong>Events</strong>:<br>
-@foreach($vehicle->event as $event)
+@foreach($vehicle->events as $event)
 {{$event->date}}: <u>{{$event->title}}</u>
 <br>{{$event->summary}}
 <hr>

@@ -60,3 +60,14 @@ Made updates to post vehicle data and save to vehicles table.
 Will need to add input validation to return error message if input data is incorrect.
 
 Added very basic links to navigate between pages right now before adding a menu.
+
+Changed eloquent relationship for event for vehicle to be plural because there will be many events for 
+each vehicle. Updated vehicle Details view page for this update in the foreach loop of events.
+Also fixed bug where Events header was displayed when no events were available for a vehicle. Needed to 
+change if condition for viewing events from 
+    if (isset($vehicle->events))
+to
+    if ($vehicle->events->ifNotEmpty())
+because it is an eloquent relationship and isset() and empty() do not work because event if it has no
+values it is set and not null or false so the following need to be used:
+ifEmpty(), ifNotEmpty(), or count($vehicle->events) > 0
