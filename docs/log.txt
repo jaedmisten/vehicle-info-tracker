@@ -54,3 +54,9 @@ input take with user session id to prevent CSRF attack.
 can be updated later.
 
 Made updates to post vehicle data and save to vehicles table.
+
+
+1/4/22 - Made updates to save engine data to engines table when saving vehicle data when adding new vehicle.
+Will need to add input validation to return error message if input data is incorrect.
+
+Added very basic links to navigate between pages right now before adding a menu.

@@ -29,17 +29,18 @@ class Vehicle extends Model
         $vehicle = new Vehicle();
         $vehicle->user_id = $userId;
         $vehicle->vin = $request->input('vin');
-        $vehicle->license_plate_num = $request->input('licensePlate');
+        $vehicle->license_plate_num = $request->input('license_plate');
         $vehicle->make = $request->input('make');
         $vehicle->model = $request->input('model');
         $vehicle->year = $request->input('year');
         $vehicle->type = $request->input('type');
-        $vehicle->num_doors = $request->input('numDoors');
+        $vehicle->num_doors = $request->input('num_doors');
         $vehicle->color = $request->input('color');
-        $vehicle->currently_own = $request->input('currentlyOwn');
-        $vehicle->purchase_date = $request->input('purchaseDate');
-        $vehicle->purchase_mileage = $request->input('purchaseMileage');
+        $vehicle->currently_own = $request->input('currently_own');
+        $vehicle->purchase_date = $request->input('purchase_date');
+        $vehicle->purchase_mileage = $request->input('purchase_mileage');
         $vehicle->notes = $request->input('notes');
         $vehicle->save();
+        return $vehicle->id;
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Vehicle;
+use App\Models\Engine;
 use App\Models\Event;
+use App\Models\Vehicle;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -41,7 +42,18 @@ class VehicleController extends Controller
     public function store(Request $request)
     {
         $userId = Auth::user()->id;
-        Vehicle::store($userId, $request);
+        $vehicleId = Vehicle::store($userId, $request);
+        //dd($vehicleId);
+        if (isset($vehicleId)) {
+            $engineDetails['vehicle_id'] = $vehicleId;
+            $engineDetails['type'] = $request->input('engine_type');
+            $engineDetails['num_cylinders'] = $request->input('num_cylinders');
+            $engineDetails['notes'] = $request->input('notes');
+            Engine::store($engineDetails);       
+            return redirect('vehicles');
+        }
+        
+        abort(500, 'Error saving vehicle');
     }
     
     /**
