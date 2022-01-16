@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function() {
     Route::get('/vehicles/{id}', 'App\Http\Controllers\VehicleController@show');
     Route::get('/vehicle/create', 'App\Http\Controllers\VehicleController@create');
     Route::post('/vehicle', 'App\Http\Controllers\VehicleController@store');
+    Route::post('/event', 'App\Http\Controllers\EventController@store');
 });
 
 

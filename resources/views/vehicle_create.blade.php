@@ -3,7 +3,6 @@
 @section('content')
 <a href="/vehicles">View All Vehicles</a><br><br>
 <h1>Add Vehicle</h1>
-
 <form id="addVehicleForm" name="addVehicleForm" action="/vehicle" method="POST">
     @csrf
     VIN: <input type="text" id="vin" name="vin" value=""><br>

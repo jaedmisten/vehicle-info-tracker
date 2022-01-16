@@ -30,7 +30,7 @@ class VehicleController extends Controller
      */
     public function create()
     {
-        return view('vehicle_create');
+        
     }
     
     /**
@@ -43,7 +43,6 @@ class VehicleController extends Controller
     {
         $userId = Auth::user()->id;
         $vehicleId = Vehicle::store($userId, $request);
-        //dd($vehicleId);
         if (isset($vehicleId)) {
             $engineDetails['vehicle_id'] = $vehicleId;
             $engineDetails['type'] = $request->input('engine_type');
