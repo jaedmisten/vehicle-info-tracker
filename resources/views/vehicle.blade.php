@@ -4,6 +4,17 @@
 <a href="/vehicles">View All Vehicles</a><br><br>
 <h1>Vehicle</h1>
 
+@if ($errors->any())
+<div class="alert alert-danger">
+    To add events:
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
+
 <strong>{{$vehicle->year}} {{$vehicle->make}} {{$vehicle->model}}</strong><br>
 Type: {{$vehicle->type}}<br>
 VIN: {{$vehicle->vin}}<br>
@@ -63,5 +74,4 @@ Notes: {{$vehicle->notes}}<br>
     </div>
   </div>
 </div>
-
 @endsection

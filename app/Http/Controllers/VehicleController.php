@@ -41,6 +41,14 @@ class VehicleController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'make'          => 'required',
+            'model'         => 'required',
+            'year'          => 'required',
+            'type'          => 'required',
+            'currently_own' => 'required',
+            'engine_type'   => 'required'
+        ]);
         $userId = Auth::user()->id;
         $vehicleId = Vehicle::store($userId, $request);
         if (isset($vehicleId)) {

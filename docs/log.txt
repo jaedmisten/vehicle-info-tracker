@@ -71,3 +71,11 @@ to
 because it is an eloquent relationship and isset() and empty() do not work because event if it has no
 values it is set and not null or false so the following need to be used:
 ifEmpty(), ifNotEmpty(), or count($vehicle->events) > 0
+
+
+1/16/22 - Created a basic form to add events to a vehicle. Currently the form is just in a pop up modal
+on the Vehicle details page.
+In the event database migration, changed the date column to be data datatype instead of datetime.
+
+
+1/18/22 - Added laravel validation rules for required fields when adding a vehicle or event.

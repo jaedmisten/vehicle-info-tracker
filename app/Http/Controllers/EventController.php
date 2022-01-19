@@ -15,6 +15,10 @@ class EventController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'date'  => 'required',
+            'title' => 'required'
+        ]);
         $event = Event::store($request);
         if ($event) {
             return back();
